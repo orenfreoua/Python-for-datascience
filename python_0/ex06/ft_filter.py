@@ -1,10 +1,7 @@
 #!/usr/bin/env python3
 
 
-from typing import Callable, Iterable
-
-
-def ft_filter(function: Callable[[any], bool], iterable: Iterable) -> list:
+def ft_filter(function, iterable):
     """
     Return an iterator yielding those items of iterable for which
     function(item) is true.
@@ -18,7 +15,7 @@ def ft_filter(function: Callable[[any], bool], iterable: Iterable) -> list:
     return [item for item in iterable if function(item)]
 
 
-def main() -> None:
+def main():
     """
     Main function for testing purposes.
     This block should not produce output unless explicitly called.
