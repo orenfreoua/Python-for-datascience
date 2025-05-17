@@ -43,10 +43,10 @@ def main() -> None:
             morse_text += NESTED_MORSE[char]
         print(morse_text.strip())
     except AssertionError as e:
-        print(f"AssertionError: {e}")
+        print(Colors.RED, f"AssertionError: {e}", Colors.END)
 
     except AssertionError as e:
-        print(f"AssertionError: {e}")
+        print(Colors.RED, f"AssertionError: {e}", Colors.END)
 
 
 if __name__ == "__main__":

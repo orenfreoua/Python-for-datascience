@@ -1,19 +1,14 @@
 #!/usr/bin/env python3
-"""
-This module provides a custom implementation of the built-in filter function.
-"""
-
-from typing import Callable, Iterable, Any
 
 
-def ft_filter(function: Callable[[Any], bool], iterable: Iterable) -> list:
+from typing import Callable, Iterable
+
+
+def ft_filter(function: Callable[[any], bool], iterable: Iterable) -> list:
     """
-    Apply function to each item in iterable and return a list of items
-    for which the function returns True.
-
-    :param function: A function that returns True or False.
-    :param iterable: An iterable (e.g., list, tuple, etc.).
-    :return: A list of elements for which function returns True.
+    Return an iterator yielding those items of iterable for which
+    function(item) is true.
+    If function is None, return the items that are true.
     """
     if not callable(function):
         raise TypeError("First argument must be a callable")
