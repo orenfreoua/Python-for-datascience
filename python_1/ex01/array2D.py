@@ -11,8 +11,12 @@ def slice_me(family: list, start: int, end: int) -> list:
     # Check if it's a 2D list and all sublists have the same length
     if not all(isinstance(row, list) for row in family):
         raise TypeError("All elements of the input must be lists.")
-    if len(set(len(row) for row in family)) > 1:
-        raise ValueError("All sublists must be of the same length.")
+    # Get the length of the first sublist
+    expected_length = len(family[0])
+    # Check all other sublists
+    for i, row in enumerate(family):
+        if len(row) != expected_length:
+            raise ValueError(f"Sublists must all have the same length. Problem at row {i}: {row}")
 
     # Convert to numpy array for easy shape handling and slicing
     array = np.array(family)
